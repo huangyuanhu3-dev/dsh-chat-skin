@@ -1,0 +1,54 @@
+{
+  "name": "dsh-chat-skin",
+  "version": "1.0.0",
+  "description": "给 DSH 聊天换背景：深浅遮罩、毛玻璃、CSS 动画、字体与 emoji 图标，全部实时预览并持久保存。",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "meta": {
+    "title": "聊天外观工坊",
+    "description": "聊天背景、遮罩深浅、毛玻璃、CSS 动画、字体与 emoji 图标，实时预览并持久保存。"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon.svg": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "background",
+    "theme",
+    "skin",
+    "chat"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "license": "MIT"
+}
